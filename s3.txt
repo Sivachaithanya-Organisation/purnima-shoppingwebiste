@@ -1,0 +1,214 @@
+
+S3 = S imple S torage S ervice
+
+1. Cost
+2. Flexibility
+
+40-50% cheaper than the other cloud storage services.
+
+
+Where are you using the S3 in your project ?
+
+
+1. Storing of the logs of the application in different stages
+
+2. To store the environmental variables of the application
+
+	key and value.. for ex: username: Vijay, password: vijay1234, url: PostgreSQL.shoppig.... 
+
+3. data transfer
+
+	replication/replicate ===> copy to another account
+
+****4. Static web hosting
+
+	Frontend websotes.. just general static websites
+
+
+
+S3 bucket ===> One drive
+
+you can create N number of buckets in one account.
+
+Object = file or folder
+
+S3 objects...
+
+ARN: Amazon Resource Name
+
+arn:aws:iam::794934876309:user/siva-user
+
+
+arn:aws:<Service_name>:<region>:<account_id>:<resource_name>
+
+arn:aws:ec2:us-west-2:794934876309:subnet/subnet-0e68fb444d089646a
+
+arn:aws:acm:us-west-2:794934876309:certificate/e4a216c1-6617-4886-9354-1f321fc266ad
+
+arn:aws:s3:::siva-123-794934876309-us-west-2-an
+
+
+URI:  
+s3://tanusha-17042026-794934876309-us-west-2-an/asgandalb.txt
+
+s3://tanusha-17042026-794934876309-us-west-2-an/tanusha-folder/aws-10/Linux.txt
+
+URL:
+https://tanusha-17042026-794934876309-us-west-2-an.s3.us-west-2.amazonaws.com/asgandalb.txt
+
+https://tanusha-17042026-794934876309-us-west-2-an.s3.us-west-2.amazonaws.com/tanusha-folder/aws-10/Linux.txt
+
+
+
+policy generator:
+
+https://awspolicygen.s3.amazonaws.com/policygen.html
+
+
+bucket policy:
+
+
+Deputy collecter
+
+
+data of list of robberies: Hyderabad / south india / india
+
+who can access ? Venkat, trishank
+
+what action they can do ? edit/delete the people/add more people to list/give access to other/
+
+on what resource they can do some actions ? 
+
+
+hyder: edit/delete the people/add more people to list/give access to other/
+
+bang: read/edit
+
+india: read
+
+
+
+lifecycle rules of s3:
+
+1. Storing of the logs of the application in different stages in s3
+
+A small application also for one week of time, you will have 5TB logs data ==> one month 20TB 
+
+Stages/Storage Classes of the S3:
+
+1. Standard
+
+2. Intelligent tier
+
+3. Glacier instant retrieval
+
+4. Deep Glacier
+
+
+Logging tools for application like cloudwatch, ELK... storing the logs in logging tool is so costly..
+
+According to the organization ( for auditing purpose ), storing the logs in logging tool actively is for atleast 6 months ( the latest six months )
+
+
+Lets take an example Vijay has an application launched "vijayshopping.com" on June month
+
+For the first six months of data he has to keep the logs in logging tool
+
+
+
+Logging tool
+June2025-December2025
+
+
+Logging tool			S3-standard
+July2025-January 2026		June2025
+
+Logging tool			S3-standard
+August2025-February 2026	June2025,July 2025
+
+
+Logging tool			S3-standard
+September2025-March2026		June2025-August2025
+
+
+Logging tool			S3-standard			S3-Intelligent Tier
+October2025-April2026		July2025-September2025		June2025
+
+Logging tool			S3-standard			S3-Intelligent Tier
+November2025-May2026		August2025-October2025		June2025,July2025
+
+
+Logging tool			S3-standard			S3-Intelligent Tier		Glacier		Deep Glacier
+December2025-June2026		September2025-November2025	June2025-August2025
+
+1TB=100$				40$				25$			10$		5$
+
+
+Logging tool			S3-standard			S3-Intelligent Tier			Glacier		Deep Glacier
+December2025-June2026		90days				90(Standard)+30(minimum)=120days	120(IA)+0
+
+1TB=100$				40$				25$				10$		5$
+
+
+Glacier = Archieve
+
+Deep Glacier = Deep Archieve
+
+
+Static web hosting:
+
+S3 static web hosting has given you http (not secure) website endpoint.
+
+1. blogs/article
+
+AngularJS, ReactJS, HTML, CSS
+
+
+CloudFront ( CDN = Content Delivery Network )
+
+CloudFront Distribution
+
+
+CDN will help to make your static web hosting to a secure static web hosting...
+
+Edge networking...
+
+
+Edge base/location
+
+you cant decide the edge base or edge location.
+
+
+invalidation ---> important
+
+
+CloudFront will give an https secure website endpoint.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		

@@ -49,19 +49,13 @@ jobs:
 
       - name: Execute Remote SSH Commands
         uses: appleboy/ssh-action@v1.0.3
-        env:
-          REGISTRY: 794934876309.dkr.ecr.us-west-2.amazonaws.com
-          REPOSITORY: tanusha-sample-docker
-          IMAGE_TAG: ${{ github.sha }}
-
         with:
           host: ${{ secrets.EC2_HOST }}
           username: ${{ secrets.EC2_USER }}
           key: ${{ secrets.EC2_SSH_KEY }}
           port: 22
-
           script: |
             whoami
-            aws ecr get-login-password --region us-west-2 | docker login --username AWS --password-stdin $REGISTRY
-            docker pull $REGISTRY/$REPOSITORY:$IMAGE_TAG
-            docker run -itd -p 5050:5050 --name tanusha-app $REGISTRY/$REPOSITORY:$IMAGE_TAG      
+            aws ecr get-login-password --region us-west-2 | docker login --username AWS --password-stdin 794934876309.dkr.ecr.us-west-2.amazonaws.com
+            docker pull 794934876309.dkr.ecr.us-west-2.amazonaws.com/tanusha-sample-docker:${{ github.sha }}
+            docker run -itd -p 5050:5050 --name tanusha-app 794934876309.dkr.ecr.us-west-2.amazonaws.com/tanusha-sample-docker:${{ github.sha }}      

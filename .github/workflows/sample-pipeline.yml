@@ -6,9 +6,9 @@ name: Tanusha sample docker project workflow
 on:
   push: 
     branches:
-      - development  #branch_1
-      - UAT          #branch_2
-      - main         #branch_3
+      # - development  #branch_1
+      # - UAT          #branch_2
+      # - main         #branch_3
 
 #optional
 env:

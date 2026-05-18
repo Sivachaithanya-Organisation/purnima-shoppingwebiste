@@ -3,6 +3,7 @@ kind: Ingress
 
 metadata:
   name: app-scanner-ingress
+  namespace: scanner
 
   annotations:
     kubernetes.io/ingress.class: alb

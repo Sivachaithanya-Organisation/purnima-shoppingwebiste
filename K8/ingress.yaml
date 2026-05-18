@@ -33,6 +33,6 @@ spec:
 
             backend:
               service:
-                name: app-scanner-service
+                name: app-scanner
                 port:
                   number: 80
